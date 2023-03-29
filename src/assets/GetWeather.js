@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import './GetWeather.css';
+import './styles/GetWeather.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -8,7 +8,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import 'moment/locale/es';
 
-import Map from './Map';
+import TodayWeather from './todayDate';
 
 
 
@@ -66,6 +66,7 @@ function GetWeather() {
         {weatherData && today && (
           <div className="weather-body" key={weatherData.city.id}>
             <h2>{weatherData.city.name}, {weatherData.city.country}</h2>
+            <TodayWeather weatherData={weatherData} />
             <Tabs>
               <TabList>
                 {Object.entries(today).map(([day]) => (
