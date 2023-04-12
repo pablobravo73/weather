@@ -16,9 +16,8 @@
   
   
   .today-card-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   display:grid;
+   
   }
   
   .today-card-row {
@@ -49,6 +48,11 @@
     font-size: x-small;
     padding-top: -10px; ;
 
+  }
+
+  .section-container{
+    display: flex;
+    flex-direction: row;
   }
   
   .temp-section {

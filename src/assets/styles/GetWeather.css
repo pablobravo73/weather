@@ -31,6 +31,7 @@ button {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px #c5c5c5;
+  width: 450px;
 }
 
 .weather-body h2 {
@@ -60,7 +61,8 @@ button {
   display: inline-flex;
   padding: 4px;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+  
 }
 
 
@@ -76,6 +78,7 @@ button {
   width: 100%;
   max-width: 100%;
   height: 178px;
+  
 }
 
 

@@ -14,7 +14,7 @@ function TodayWeather({ weatherData }) {
       return;
     }
     const todayWeatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=sp&units=metric&appid=${APIkey}`
-  
+
     fetch(todayWeatherURL)
       .then(response => {
         if (!response.ok) {
@@ -23,7 +23,7 @@ function TodayWeather({ weatherData }) {
         return response.json();
       })
       .then(data => {
-        
+
         setTodayWeather(data);
         console.log(data);
       })
@@ -34,28 +34,31 @@ function TodayWeather({ weatherData }) {
 
   return (
     <div>
-      
+
       {todayWeather && (
         <div className='today-card'>
           <div className='today-card-title'>
             <section className='temp-section'>
-              <img src={`http://openweathermap.org/img/w/${todayWeather.weather[0].icon}.png`} alt='weather icon' /> 
-            
-                <p>{`${Math.round(todayWeather.main.temp)}°C`}</p>
+              <img src={`http://openweathermap.org/img/w/${todayWeather.weather[0].icon}.png`} alt='weather icon' />
+
+              <p>{`${Math.round(todayWeather.main.temp)}°C`}</p>
             </section>
             <div className='today-card-body'>
-              <div className='today-card-row'>
-
-              <section className='section-container'>
               <p>{moment.unix(todayWeather.dt).format('dddd D MMMM')}</p>
               <p>{moment.unix(todayWeather.dt).format('HH:mm')}</p>
-              </section>
-              <section className='description-section'>
-                <p className='section-description'>{todayWeather.weather[0].description}</p>
-              
-              </section>
-              
-              
+                  
+              <div className='today-card-row'>
+
+                {/* <section className='section-container'>
+                  <p>{moment.unix(todayWeather.dt).format('dddd D MMMM')}</p>
+                  <p>{moment.unix(todayWeather.dt).format('HH:mm')}</p>
+                </section> */}
+                <section className='description-section'>
+                  <p className='section-description'>{todayWeather.weather[0].description}</p>
+
+                </section>
+
+
               </div>
             </div>
           </div>
